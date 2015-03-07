@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Boilerplate for ReactJS project with hot code reloading",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "karma start --single-run=true"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
     "hmr",
     "live",
     "edit",
-    "webpack"
+    "webpack",
+    "karma"
   ],
   "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
   "license": "MIT",
@@ -30,6 +32,15 @@
   "devDependencies": {
     "babel-core": "^4.7.3",
     "babel-loader": "^4.1.0",
+    "expect": "^1.6.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-cli": "0.0.4",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-mocha": "^0.1.10",
+    "karma-sourcemap-loader": "^0.3.4",
+    "karma-webpack": "^1.5.0",
+    "mocha": "^2.2.0",
     "object-assign": "^2.0.0",
     "react": "^0.12.2",
     "react-hot-loader": "^1.1.1",

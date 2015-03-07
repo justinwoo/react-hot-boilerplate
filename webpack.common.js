@@ -7,8 +7,15 @@ module.exports = {
     publicPath: '/dist/'
   },
   module: {
-    loaders: [
-      { test: /\.js?$/, loaders: ['react-hot', 'babel-loader'], exclude: /node_modules/ }
-    ]
+    loaders: [{
+      test: function (filename) {
+        if (filename.indexOf('node_modules') !== -1) {
+          return false;
+        } else {
+          return /\.js$/.test(filename) !== -1;
+        }
+      },
+      loaders: ['react-hot', 'babel-loader']
+    }]
   }
 };

@@ -11,8 +11,12 @@ npm start
 open http://localhost:3000
 ```
 
-Now edit `scripts/App.js`.  
+Now edit `src/components/App.js`.
 Your changes will appear without reloading the browser like in [this video](http://vimeo.com/100010922).
+
+### Added in this fork
+
+More configs, some rearranged files, and testing with Karma.
 
 ### Using `0.0.0.0` as Host
 
