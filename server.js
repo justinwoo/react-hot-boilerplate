@@ -5,7 +5,15 @@ var config = require('./webpack.config');
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
-  historyApiFallback: true
+  historyApiFallback: true,
+  stats: {
+    hash: false,
+    chunks: false,
+    chunkModules: false,
+    modules: false,
+    children: false,
+    colors: true
+  }
 }).listen(3000, 'localhost', function (err, result) {
   if (err) {
     console.log(err);

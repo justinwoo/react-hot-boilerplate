@@ -1,27 +1,21 @@
 var webpack = require('webpack');
+var path = require('path');
+var assign = require('object-assign');
 
-module.exports = {
+var commonConfig = require('./webpack.common');
+
+module.exports = assign({}, commonConfig, {
   devtool: 'eval',
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './scripts/index'
+    './src/index'
   ],
-  output: {
-    path: __dirname + '/scripts/',
-    filename: 'bundle.js',
-    publicPath: '/scripts/'
-  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
-  },
-  module: {
-    loaders: [
-      { test: /\.jsx?$/, loaders: ['react-hot', 'jsx?harmony'], exclude: /node_modules/ }
-    ]
   }
-};
+});
